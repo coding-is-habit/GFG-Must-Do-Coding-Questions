@@ -1,3 +1,43 @@
+
+//2nd Solution
+int flag=0;
+for(int i = 0; i<n;i++){
+	        int sum_so_far=0;// find running sum and then compare and then check
+	        for(int j =i ;j<n;j++){
+	            sum_so_far+=a[j];
+	            if(sum_so_far==k){
+	                cout<<i+1<<" "<<j+1<<"\n";//1based indexing
+	                flag=1;
+	            }
+	            if(sum_so_far>k){
+	                break;
+	            }
+	        }
+	        if(flag==1)
+	        break;
+}
+ 
+int start = 0;
+	    int end = 1;
+	    int cur_sum=arr[0];
+	    int flag=0;
+	    while(end<=n){
+	        
+	        if(cur_sum>k){
+	            cur_sum-=arr[start++];
+	        }
+	        else if(cur_sum<k)
+	        cur_sum+=arr[end++];
+	        else if(cur_sum==k)
+	        {
+	            cout<<start+1<<" "<<end<<"\n";
+	            flag=1;
+	        }
+	        if(flag==1)
+	        break;
+          }
+
+
 #include <bits/stdc++.h>
 #define int long long int
 using namespace std;
@@ -46,3 +86,4 @@ int32_t main() {
 	
 	return 0;
 }
+
